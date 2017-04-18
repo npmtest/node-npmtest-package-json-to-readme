@@ -1,1 +1,40 @@
-{     "devDependencies": {         "package-json-to-readme": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-package-json-to-readme",     "homepage": "https://github.com/npmtest/node-npmtest-package-json-to-readme",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-package-json-to-readme.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### test coverage for  [package-json-to-readme (v2.0.0)](https://github.com/zeke/package-json-to-readme#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-package-json-to-readme.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-package-json-to-readme) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-package-json-to-readme.svg)](https://travis-ci.org/npmtest/node-npmtest-package-json-to-readme)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "package-json-to-readme": "*",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-package-json-to-readme",
+    "keywords": [
+        "coverage",
+        "test",
+        "package-json-to-readme"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_package_json_to_readme.js",
+    "name": "npmtest-package-json-to-readme",
+    "nameAlias": "npmtest_package_json_to_readme",
+    "nameOriginal": "npmtest-package-json-to-readme",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-package-json-to-readme.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
